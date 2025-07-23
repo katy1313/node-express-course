@@ -23,3 +23,4 @@ const mySentance = readFileSync('./content/temporary/fileA.txt', 'utf8')
 console.log(mySentance)
 console.log('done with this task')
 console.log('starting the next one')
+

@@ -1,4 +1,4 @@
-const http = require('http')
+const http = require('http') //garbbing http module
 
 const server = http.createServer((req, res) => {
   //   if (req.url === '/') {
@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
   // SWITCH TO IF, ELSE IF, ELSE (BELOW)
   // WE COVER THE CAUSE, LATER IN EXPRESS TUTORIAL
   if (req.url === '/') {
-    res.end('Welcome to our home page')
+    res.end('Welcome to our home page') //sending the text back
   } else if (req.url === '/about') {
     res.end('Here is our short history')
   } else {
@@ -31,4 +31,4 @@ const server = http.createServer((req, res) => {
   }
 })
 
-server.listen(5000)
+server.listen(3000)
