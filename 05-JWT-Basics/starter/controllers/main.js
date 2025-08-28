@@ -7,9 +7,9 @@ const login = async (req, res) => {
     //Joi
     //check in the controller
     if (!username || !password) {
-        throw new BadRequestError('Please provide email and password')
+        throw new BadRequestError('Please provide username and password')
     }
-    const id = new Date().getDate //dummy id for the demo
+    const id = new Date().getDate() //dummy id for the demo
     const token = jwt.sign({ id, username }, process.env.JWT_SECRET, { expiresIn: '30d' })
 
     res.status(200).json({ msg: 'user created', token })
