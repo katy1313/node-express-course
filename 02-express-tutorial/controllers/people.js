@@ -5,7 +5,7 @@ const getPeople = (req, res) => {
 }
 
 const addPerson = (req, res) => {
-    const name = req.body
+    const {name} = req.body
     if (!name) {
         return res.status(400).json({ success: false, message: "Please provide a name" })
     }
@@ -54,7 +54,7 @@ const deletePerson = (req, res) => {
     const newPeople = people.filter((person) => {
         person.id !== Number(id)
     })
-    res.status(200).json({ success: true, data: newPeople})
+    return res.status(200).json({ success: true, data: newPeople})
 
 }
 

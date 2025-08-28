@@ -8,7 +8,7 @@ const auth = require('./controllers/auth.js')
 const logger = (req, res, next) => {
     const method = req.method
     const url = req.url
-    const time = new Date().getFullYear()
+    const time = new Date().toLocaleString()
     console.log(method, url, time)
     next()
   }
@@ -89,8 +89,9 @@ app.post('/logon', (req, res) => {
     if(name) {
         res
             .status(201)
-            .send(`Welcome, ${name}`)
             .cookie('name', name)
+            .send(`Welcome, ${name}`)
+            // .cookie('name', name)
     } else {
         res
             .status(400)
